@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}Бизнес Менеджер{% endblock title %}
+    </title>
+    {% block stylesheets %}
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'css/style.css' %}">
+    {% endblock stylesheets %}
+</head>
+<body>
+    <div class="content">
+        {% block content %}
+            <h1>Добро пожаловать в Бизнес Менеджер</h1>
+        {% endblock content %}
+    </div>
+</body>
+</html>
