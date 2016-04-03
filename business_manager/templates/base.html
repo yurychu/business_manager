@@ -13,17 +13,18 @@
     {% endblock stylesheets %}
 </head>
 <body>
-    {% block dashboard %}
-    <div class="dashboard">
-        <a href="">Войти</a>
-        <a href="">Зарегистрироваться</a>
-        <a href="">Выйти</a>
+    <div class="login-board">
+        {% comment %}<a href="{% url 'profiles:login' %}">Войти</a>{% endcomment %}
+        <a href="{% url 'profiles:create_user' %}">Зарегистрироваться</a>
+        {% comment %}<a href="{% url 'profiles:logout' %}">Выйти</a>{% endcomment %}
     </div>
-    {% endblock dashboard %}
+
     <div class="content">
         {% block content %}
             <h1>Добро пожаловать в Бизнес Менеджер</h1>
         {% endblock content %}
+        {% block profiles %}
+        {% endblock profiles %}
     </div>
 </body>
 </html>
