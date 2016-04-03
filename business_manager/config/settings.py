@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'launchers',
+    'profiles',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +127,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "staticfiles"),
 ]
+
+AUTH_USER_MODEL = 'profiles.BusinessManUser'

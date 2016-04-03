@@ -13,6 +13,13 @@
     {% endblock stylesheets %}
 </head>
 <body>
+    {% block dashboard %}
+    <div class="dashboard">
+        <a href="">Войти</a>
+        <a href="">Зарегистрироваться</a>
+        <a href="">Выйти</a>
+    </div>
+    {% endblock dashboard %}
     <div class="content">
         {% block content %}
             <h1>Добро пожаловать в Бизнес Менеджер</h1>
