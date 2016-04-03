@@ -1,9 +1,9 @@
 from django.conf.urls import url
 
-from .views import home_page
+from . import views
 
 urlpatterns = [
     url(regex=r'^$',
-        view=home_page,
+        view=views.home_page,
         name='home_page')
 ]
