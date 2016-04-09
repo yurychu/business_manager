@@ -19,7 +19,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # Система авторизации
+    # Джанговская система авторизации
+    url(r'registration/', include('django.contrib.auth.urls', namespace='registration')),
+    # Система профилей пользователей
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
     # Домашняя страница в приложении Launchers
     url(r'^', include('launchers.urls', namespace='launchers')),

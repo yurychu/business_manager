@@ -1,0 +1,7 @@
+{% extends 'registration/base_registration.html' %}
+{% block title %}Выход из системы{% endblock title %}
+
+{% block content %}
+<h1>Вы вышли</h1>
+<p>Спасибо, что заходили. Можете <a href="{% url 'registration:login' %}">войти</a> вновь.</p>
+{% endblock %}

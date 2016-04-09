@@ -1,9 +1,9 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
 
 
 urlpatterns = [
     url(regex=r'^register/$',
-        view=views.RegisterFormView.as_view(),
+        view=views.RegisterUserFormView.as_view(),
         name='register'),
 ]

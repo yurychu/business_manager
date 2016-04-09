@@ -3,9 +3,9 @@ from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm
 
 
-class RegisterFormView(View):
+class RegisterUserFormView(View):
     form_class = UserCreationForm
-    template_name = 'profiles/profile_register.html'
+    template_name = 'registration/profile_create_user.html'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
