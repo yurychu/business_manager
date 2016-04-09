@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     url(regex=r'^register/$',
-        view=views.create_user,
-        name='create_user'),
+        view=views.RegisterFormView.as_view(),
+        name='register'),
 ]
