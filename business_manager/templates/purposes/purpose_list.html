@@ -1,0 +1,15 @@
+{% extends 'purposes/base_purposes.html' %}
+{% block title %}Доска целей{% endblock title %}
+{% block content %}
+    <h1>Цели</h1>
+    <ul>
+        {% for purpose in object_list %}
+            <li>{{ purpose.title }} - {{ purpose.description }}</li>
+        {% empty %}
+            <li>Не нашлось целей. Вы можете добавить.</li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{% url 'purposes:create' %}">Добавить цель</a>
+    </p>
+{% endblock content %}

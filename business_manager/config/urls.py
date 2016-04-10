@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'registration/', include('django.contrib.auth.urls', namespace='registration')),
     # Система профилей пользователей
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
+    # Доски с целями
+    url(r'^purposes/', include('purposes.urls', namespace='purposes')),
     # Домашняя страница в приложении Launchers
     url(r'^', include('launchers.urls', namespace='launchers')),
 ]

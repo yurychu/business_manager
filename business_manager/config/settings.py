@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'launchers',
     'profiles',
+    'purposes',
 ]
 
 MIDDLEWARE_CLASSES = [
