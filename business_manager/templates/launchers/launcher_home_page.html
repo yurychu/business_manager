@@ -1,1 +1,7 @@
 {% extends 'launchers/base_launchers.html' %}
+{% block content %}
+    {{ block.super }}
+    <p>
+        <a href="{% url 'purposes:list' %}">Перейти к списку целей</a>
+    </p>
+{% endblock content %}
