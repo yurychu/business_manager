@@ -1,6 +1,7 @@
 {% extends 'purposes/base_purposes.html' %}
 {% block title %}Доска целей{% endblock title %}
 {% block content %}
+    {{ block.super}}
     <h1>Цели</h1>
     <ul>
         {% for purpose in object_list %}

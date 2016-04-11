@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login
 
 class RegisterUserFormView(View):
     form_class = UserCreationForm
-    template_name = 'registration/profile_create_user.html'
+    template_name = 'profiles/profile_create_user.html'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
