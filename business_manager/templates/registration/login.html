@@ -6,7 +6,6 @@
 
 {% block content %}
     <h1>Вход в систему</h1>
-
     <form method="post" action="" class="form-input">
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next|default:'/' }}">
