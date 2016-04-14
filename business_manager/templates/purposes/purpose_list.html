@@ -5,12 +5,12 @@
     <h1>Цели</h1>
     <ul>
         {% for purpose in object_list %}
-            <li>{{ purpose.title }} - {{ purpose.description }}</li>
+            <li>{{ purpose.title }} - {{ purpose.description }} - <a href="{{ purpose.id }}"><small>Редактировать</small></a> </li>
         {% empty %}
             <li>Не нашлось целей. Вы можете добавить.</li>
         {% endfor %}
     </ul>
     <p>
-        <a href="{% url 'purposes:create' %}">Добавить цель</a>
+        <a href="{% url 'purposes:create' %}">Создать</a>
     </p>
 {% endblock content %}

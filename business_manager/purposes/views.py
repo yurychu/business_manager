@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
 
 
@@ -15,3 +15,10 @@ class PurposeCreateView(SuccessMessageMixin, CreateView):
     fields = ['title', 'description']
     # success_url = '/purposes/'
     success_message = 'Новая цель успешно создана!'
+
+
+class PurposeUpdateView(SuccessMessageMixin, UpdateView):
+    model = Purpose
+    template_name_suffix = '_update_form'
+    fields = ['title', 'description']
+    success_message = 'Данные успешно отредактированы!'

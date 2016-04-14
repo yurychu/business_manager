@@ -1,0 +1,9 @@
+{% extends 'purposes/base_purposes.html' %}
+{% block title %}Добавить цель{% endblock title %}
+{% block content %}
+   <form action="" method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <input type="submit" value="Сохранить изменения">
+   </form>
+{% endblock content %}
