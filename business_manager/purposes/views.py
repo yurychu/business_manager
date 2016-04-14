@@ -4,6 +4,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 
 from .models import Purpose
+from .forms import PurposeForm
 
 
 class PurposesListView(ListView):
@@ -12,9 +13,14 @@ class PurposesListView(ListView):
 
 class PurposeCreateView(SuccessMessageMixin, CreateView):
     model = Purpose
-    fields = ['title', 'description']
+    form_class = PurposeForm
     # success_url = '/purposes/'
     success_message = 'Новая цель успешно создана!'
+
+    def get_form_kwargs(self):
+        kwargs = super(PurposeCreateView, self).get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
 
 
 class PurposeUpdateView(SuccessMessageMixin, UpdateView):
