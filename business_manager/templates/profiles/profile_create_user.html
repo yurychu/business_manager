@@ -1,11 +1,15 @@
 {% extends 'registration/base_registration.html' %}
 {% block title %}Регистрация профиля{% endblock title %}
-{% block register %}<a href="{% url 'registration:login' %}">Войти</a>{% endblock register %}
 {% block content %}
-    <h1>Заполните форму для регитстрации</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form }}
+    <div>
+        Уже зарегистрированы? <a href="{% url 'registration:login' %}">Войти</a>
+    </div>
+    <div>
+        <h1>Заполните форму для регистрации</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
         <p><input type="submit" value="Зарегистрироваться"></p>
     </form>
+    </div>
 {% endblock content %}
