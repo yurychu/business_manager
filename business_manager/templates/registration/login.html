@@ -8,7 +8,7 @@
     </div>
     <div>
         <h1>Вход в систему</h1>
-        <form method="post" action="" class="form-input">
+        <form method="post" action="" class="">
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next|default:'/' }}">
             {{ form }}
