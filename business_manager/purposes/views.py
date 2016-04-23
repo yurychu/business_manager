@@ -1,20 +1,24 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.views.generic import ListView, CreateView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.core.urlresolvers import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .models import Purpose
 from .forms import PurposeForm
 
 
-class PurposesListView(ListView):
+class PurposesListView(LoginRequiredMixin, ListView):
     model = Purpose
+    login_url = reverse_lazy('registration:login')
 
 
-class PurposeCreateView(SuccessMessageMixin, CreateView):
+class PurposeCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Purpose
     form_class = PurposeForm
-    success_url = '/purposes/'
+    login_url = reverse_lazy('registration:login')
+    success_url = reverse_lazy('purposes:list')
     success_message = 'Новая цель успешно создана!'
 
     def get_form_kwargs(self):
@@ -30,8 +34,9 @@ class PurposeCreateView(SuccessMessageMixin, CreateView):
         return HttpResponseRedirect(self.success_url)
 
 
-class PurposeUpdateView(SuccessMessageMixin, UpdateView):
+class PurposeUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Purpose
     template_name_suffix = '_update_form'
     fields = ['title', 'description']
     success_message = 'Данные успешно отредактированы!'
+    login_url = reverse_lazy('registration:login')
