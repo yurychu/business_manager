@@ -4,17 +4,15 @@
 
 {% block content %}
     <div>
-        Вы можете <a href="{% url 'profiles:register' %}">зарегистрироваться</a>.
+        Вы можете <a href="{% url 'profiles:register' %}">зарегистрироваться</a>
     </div>
     <div>
-        <h1>Вход в систему</h1>
-        <form method="post" action="" class="">
+        <form method="post" action="" class="form-signin">
+            <h2 class="form-signin-heading">Вход в систему</h2>
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next|default:'/' }}">
             {{ form }}
-            <p>
-                <input type="submit" value="Войти"/>
-            </p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
         </form>
     </div>
 {% endblock %}
