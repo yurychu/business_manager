@@ -10,5 +10,8 @@ class Purpose(TimeStampedModel):
     description = models.TextField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
+    class Meta:
+        ordering = ['-modified']
+
     def get_absolute_url(self):
         return reverse('purposes:list')

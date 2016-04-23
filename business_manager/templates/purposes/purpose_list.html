@@ -3,14 +3,37 @@
 {% block content %}
     {{ block.super}}
     <h1>Цели</h1>
-    <ul>
+    <div class="container-fluid">
         {% for purpose in object_list %}
-            <li>{{ purpose.title }} - {{ purpose.description }} - <a href="{{ purpose.id }}"><small>Редактировать</small></a> </li>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">{{ purpose.title }}</h1>
+                </div>
+                <div class="panel-body">
+                    {{ purpose.description }}
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Создано</th>
+                            <th>Изменено</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ purpose.created }}</td>
+                            <td>{{ purpose.modified }}</td>
+                            <td><a href="{{ purpose.id }}"><small>Редактировать</small></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         {% empty %}
-            <li>Не нашлось целей. Вы можете добавить.</li>
+            <p>Не нашлось целей. Вы можете добавить.</p>
         {% endfor %}
-    </ul>
-    <p>
-        <a href="{% url 'purposes:create' %}">Создать</a>
-    </p>
+        <p>
+            <a href="{% url 'purposes:create' %}">Создать</a>
+        </p>
+    </div>
 {% endblock content %}
