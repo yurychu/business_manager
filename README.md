@@ -1,7 +1,7 @@
 # business_manager
 your business processes manager
 
-1. Локальная установка для разработки (Linux)
+*Локальная установка для разработки (Linux)
 
 $ git clone https://github.com/yurychu/business_manager.git
 
@@ -13,4 +13,5 @@ $ source env/bin/activate
 
 $ pip install -r requirements.txt
 
-2. Статические файлы находятся в каталоге staticfiles
+*Статические файлы находятся в каталоге staticfiles
+*Стилизация шаблонов страниц логина, регистрации выполнена через jquery
