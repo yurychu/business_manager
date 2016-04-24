@@ -7,12 +7,14 @@
         Вы можете <a href="{% url 'profiles:register' %}">зарегистрироваться</a>
     </div>
     <div>
-        <form method="post" action="" class="form-signin">
-            <h2 class="form-signin-heading">Вход в систему</h2>
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next|default:'/' }}">
-            {{ form }}
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
-        </form>
+        {% block target_form %}
+            <form method="post" action="" class="form-signin">
+                <h2 class="form-signin-heading">Вход в систему</h2>
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next|default:'/' }}">
+                {{ form }}
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+            </form>
+        {% endblock target_form%}
     </div>
 {% endblock %}
